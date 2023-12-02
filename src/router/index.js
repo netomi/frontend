@@ -10,7 +10,7 @@ const DefaultContainer = () => import('@/containers/DefaultContainer');
 
 // Views
 const Dashboard = () => import('@/views/Dashboard');
-const ProjectList = () => import('@/views/portfolio/projects/ProjectList');
+const ProjectListView = () => import('@/views/portfolio/projects/ProjectListView');
 const ComponentSearch = () =>
   import('@/views/portfolio/components/ComponentSearch');
 const VulnerabilityList = () =>
@@ -125,7 +125,7 @@ function configRoutes() {
         {
           path: 'projects',
           name: 'Projects',
-          component: ProjectList,
+          component: ProjectListView,
           meta: {
             title: i18n.t('message.projects'),
             i18n: 'message.projects',
@@ -139,6 +139,7 @@ function configRoutes() {
           alias: [
             'projects/:uuid/overview',
             'projects/:uuid/components',
+            'projects/:uuid/collectionprojects',
             'projects/:uuid/services',
             'projects/:uuid/dependencyGraph',
             'projects/:uuid/findings',
