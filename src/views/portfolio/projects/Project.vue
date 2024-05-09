@@ -599,4 +599,8 @@ export default {
 .badge {
   margin-right: 0.4rem;
 }
+.dropdown-menu {
+  max-height: 30rem;
+  overflow-y: auto;
+}
 </style>
