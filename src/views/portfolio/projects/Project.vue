@@ -52,7 +52,7 @@
 
                         <b-dropdown-group
                           v-if="inactiveProjectVersions.length > 0"
-                          header="Inactive Versions"
+                          :header="$t('message.inactive_versions')"
                         >
                           <span
                             v-for="projectVersion in inactiveProjectVersions"
@@ -73,6 +73,9 @@
                   {{ project.version }}
                   <i v-if="isCollectionProject()" class="fa fa-calculator fa-fw collectionlogic-icon" v-b-tooltip.hover="{title: getCollectionLogicText(project)}"></i>
                 </b-col>
+                <b-badge v-if="!this.project.active" :variant="'tab-warn'">
+                  {{ $t('message.inactive').toUpperCase() }}
+                </b-badge>
                 <b-col class="d-none d-md-flex">
                   <span
                     class="text-muted font-xs font-italic align-text-top text-truncate"
